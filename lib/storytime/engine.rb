@@ -14,6 +14,7 @@ require 'pundit'
 require 'simple_form'
 require 'codemirror-rails'
 require 'storytime_admin'
+require 'fitvidsjs_rails'
 
 require 'storytime/concerns/has_versions'
 require 'storytime/concerns/storytime_user'
