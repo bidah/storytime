@@ -39,6 +39,7 @@ Gem::Specification.new do |s|
   s.add_dependency "codemirror-rails", "~> 4.8"
   s.add_dependency "storytime-admin", "~> 0.1.0"
   s.add_dependency "devise", ">= 3.2"
+  s.add_dependency "fitvidsjs_rails"
   
   s.add_development_dependency "pg"
   s.add_development_dependency "rspec-rails"

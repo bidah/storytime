@@ -32,7 +32,13 @@
 //= require codemirror/addons/edit/closebrackets
 //= require chosen.jquery
 //= require medium-editor.min
+//= require fitvids.js
 //= require_tree .
 
 window.Storytime || (window.Storytime = {})
 window.Storytime.Dashboard = {}
+
+$(document).ready(function(){
+  // Target your .container, .wrapper, .post, etc.
+  $("#thing-with-videos").fitVids();
+});
