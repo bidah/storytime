@@ -38,9 +38,11 @@
 window.Storytime || (window.Storytime = {})
 window.Storytime.Dashboard = {}
 
+
+
 document.addEventListener("DOMContentLoaded", function(event) { 
-  //test
-    $("#thing-with-videos").fitVids();
+  //
+    $("#responsive-videos").fitVids();
 });
 
 
