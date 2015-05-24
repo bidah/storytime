@@ -12,7 +12,7 @@ module Storytime
       end
 
       authorize @post
-      
+        
       content_for :title, "#{@current_storytime_site.title} | #{@post.title}"
 
       @comments = @post.comments.order("created_at DESC")
