@@ -46,8 +46,8 @@ Storytime::Engine.routes.draw do
 
   mount StorytimeAdmin::Engine => Storytime.dashboard_namespace_path
 
-  get "/", to: "blog_homepage#show", constraints: Storytime::Constraints::BlogHomepageConstraint.new, 
-  get "/", to: "homepage#show", constraints: Storytime::Constraints::PageHomepageConstraint.new, as: :my_index, only: [:index]
+  get "/", to: "blog_homepage#show", as: :my_index, constraints: Storytime::Constraints::BlogHomepageConstraint.new
+  get "/", to: "homepage#show", constraints: Storytime::Constraints::PageHomepageConstraint.new
 
   resources :blogs, only: :show, path: "/", constraints: Storytime::Constraints::BlogConstraint.new
   resources :pages, only: :show, path: "/", constraints: Storytime::Constraints::PageConstraint.new
