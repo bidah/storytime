@@ -52,6 +52,9 @@
                   <%= f.input :published_at, as: :date_time_picker, label: "Publish Date/Time", input_html: { style: "display: inline;" } %>
                 </div>
               </div>
+              <div class="row">
+              <%= f.input :featured, as: :boolean, label: "Hacer este post un destacado en header homepage?" %>
+              </div>
       
               <hr>
 
@@ -62,6 +65,7 @@
                   <%= f.submit "Save Draft", id: "save-draft-submit", class: "btn btn-default save" unless @post.published? %>
                   <%= f.submit "Publish", class: "btn btn-primary btn-outline publish", publish: true unless @post.published? %>
                   <%= f.submit "Update", class: "btn btn-primary btn-outline save" if @post.published? %>
+                  <p> wooooops </p>
                 </div>
                 
                 <% unless @post.is_a?(Storytime::Page) || @post.is_a?(Storytime::Blog) %>
