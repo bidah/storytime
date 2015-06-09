@@ -54,9 +54,28 @@ module Storytime
       end
 
       def update
+        #byebug
         authorize @post
         @post.draft_user_id = current_user.id
-        
+
+
+        #default = @post.featured_media.file.header_img.url
+
+        #new_slider_img = params[:big_img_post][:the_header_img]
+
+        # if new_slider_img == "default"
+        #   @header ||= @post.featured_media.file.header_img.url
+        # elsif new_slider_jimg == "derecha"
+        #   @header ||= @post.featured_media.file.header_img_east.url
+        # elsif new_slider_img == "izquierda"
+        #   @header ||= @post.featured_media.file.header_img_west.url
+        # else
+        # end
+        # byebug
+
+        # @post.featured_media.file.header_img.url = header
+
+
         if @post.update_attributes(post_params)
           @post.autosave.destroy unless @post.autosave.nil?
 
