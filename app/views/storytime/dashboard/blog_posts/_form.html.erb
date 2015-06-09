@@ -45,13 +45,18 @@
                 <div class="col-sm-12">
                   <%# byebug %>
                   <!-- @post.featured_media[:retina_dimensions][:file] -->
+                  <% if @post.featured_media %>
                   <%= image_tag "#{@post.featured_media.file.header_img.url}", style: "max-width:19%" %>
                   <%= image_tag "#{@post.featured_media.file.header_img_east.url}", style: "max-width:19%" %>
                   <%= image_tag "#{@post.featured_media.file.header_img_west.url}", style: "max-width:19%" %>
                   <%= image_tag "#{@post.featured_media.file.header_img_south_east.url}", style: "max-width:19%" %>
                   <%= image_tag "#{@post.featured_media.file.header_img_south_west.url}", style: "max-width:19%" %>
                   <% @headers = [:default, :derecha, :izquierda] %>
-                  <%= f.input :the_header_img, collection: @headers, prompt: "Elige header" %>
+                  <%= f.input :type_of_header, collection: @headers, prompt: "Elige header" %>
+                  <%#= f.input :the_header_img, collection: @headers, prompt: "Elige header" %>
+                  <% end %>
+
+
                 </div>
               </div>
 

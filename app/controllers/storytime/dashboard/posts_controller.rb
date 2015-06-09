@@ -53,34 +53,50 @@ module Storytime
         end
       end
 
+      # def url=
+      #   @set = set
+      # end
+
       def update
         #byebug
         authorize @post
         @post.draft_user_id = current_user.id
 
-
         #default = @post.featured_media.file.header_img.url
-
         #new_slider_img = params[:big_img_post][:the_header_img]
-
         # if new_slider_img == "default"
         #   @header ||= @post.featured_media.file.header_img.url
-        # elsif new_slider_jimg == "derecha"
+        # elsif new_slider_img == "derecha"
         #   @header ||= @post.featured_media.file.header_img_east.url
         # elsif new_slider_img == "izquierda"
         #   @header ||= @post.featured_media.file.header_img_west.url
         # else
         # end
-        # byebug
 
-        # @post.featured_media.file.header_img.url = header
+
+        # if post.type_of_header == "default"
+        #   @display_header ||= "post.featured_media.file.header_img.url"
+        # elsif post.type_of_header == "derecha"
+        #   @display_header ||= "post.featured_media.file.header_img_east.url"
+        # elsif post.type_of_header == "izquierda"
+        #   @display_header ||= "post.featured_media.file.header_img_west.url"
+        # else
+        # end
+
+        @to_display = {
+          :default => "post.featured_media.file.header_img.url",
+          :derecha => "post.featured_media.file.header_img_east.url",
+          :izquierda => "post.featured_media.file.header_img_west.url"
+        }
+
+        # @post.featured_media.file.header_img.url = @header
 
 
         if @post.update_attributes(post_params)
           @post.autosave.destroy unless @post.autosave.nil?
 
           send_subscriber_notifications if @post.published? && post_params[:notifications_enabled] == "1"
-
+          byebug
           redirect_to [:edit, :dashboard, @post], notice: I18n.t('flash.posts.update.success')
         else
           load_media
@@ -134,7 +150,7 @@ module Storytime
       def post_params
         post = @post || current_post_type.new(user: current_user)
         permitted_attrs = policy(post).permitted_attributes
-        permitted_attrs = permitted_attrs.append(storytime_post_param_additions) if respond_to?(:storytime_post_param_additions)
+        permitted_attrs = permitted_attrs.append(storytime_post_param_additions).append(:type_of_header) if respond_to?(:storytime_post_param_additions)
         params.require(current_post_type.type_name.tableize.singularize.to_sym).permit(*permitted_attrs)
       end
 

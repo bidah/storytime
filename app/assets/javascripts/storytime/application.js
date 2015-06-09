@@ -38,12 +38,18 @@
 window.Storytime || (window.Storytime = {})
 window.Storytime.Dashboard = {}
 
-
-
 document.addEventListener("DOMContentLoaded", function(event) { 
-  //
-    $("#responsive-videos").fitVids();
+  $("#responsive-videos").fitVids();
+
+$(function() {
+  $('.menu_burger').click(function() {
+  $('.menu').slideToggle();
+  return false;
+  });
+})
+
 });
+
 
 
 
