@@ -42,6 +42,20 @@
               </div>
 
               <div class="row">
+                <div class="col-sm-12">
+                  <%# byebug %>
+                  <!-- @post.featured_media[:retina_dimensions][:file] -->
+                  <%= image_tag "#{@post.featured_media.file.header_img.url}", style: "max-width:19%" %>
+                  <%= image_tag "#{@post.featured_media.file.header_img_east.url}", style: "max-width:19%" %>
+                  <%= image_tag "#{@post.featured_media.file.header_img_west.url}", style: "max-width:19%" %>
+                  <%= image_tag "#{@post.featured_media.file.header_img_south_east.url}", style: "max-width:19%" %>
+                  <%= image_tag "#{@post.featured_media.file.header_img_south_west.url}", style: "max-width:19%" %>
+                  <% @headers = [:default, :derecha, :izquierda] %>
+                  <%= f.input :the_header_img, collection: @headers, prompt: "Elige header" %>
+                </div>
+              </div>
+
+              <div class="row">
                 <div class="col-sm-6">
                   <%= f.input :slug, input_html: { value: (@post.persisted? ? @post.slug : nil) } %>
                 </div>
@@ -85,7 +99,7 @@
                 <div class="row">
                   <div class="col-sm-10 col-sm-offset-1">
                     <div class="row">
-                      <div class="col-sm-6">
+                      <div class="col-sm-12">
                         <div class="well text-center featured_image_block <%= 'has-image' if @post.featured_media %>">
                           <%= f.input :featured_media_id, as: :hidden, input_html: { id: "featured_media_id" } %>
                           <div id="featured_media_container" class="image_container">
@@ -96,22 +110,7 @@
                           </button>
                           <i class="icon-st-icons-images select_featured_image"></i>
                           <div class="select_featured_image">
-                            <%= link_to "Select Featured Image", "#", class: "btn btn-primary btn-outline text-lighter", id: "featured_media_button" %>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="well text-center featured_image_block <%= 'has-image' if @post.secondary_media %>">
-                          <%= f.input :secondary_media_id, as: :hidden, input_html: { id: "secondary_media_id" } %>
-                          <div id="secondary_media_container" class="image_container">
-                            <%= image_tag @post.secondary_media.file_url(:thumb), id: "secondary_media_image" if @post.secondary_media %>
-                          </div>
-                          <button type="button" class="btn btn-danger btn-block remove_featured_image">
-                            <%= t('dashboard.posts.remove_image') %>
-                          </button>
-                          <i class="icon-st-icons-images select_featured_image"></i>
-                          <div class="select_featured_image">
-                            <%= link_to "Select Secondary Image", "#", class: "btn btn-primary btn-outline text-lighter", id: "secondary_media_button" %>
+                            <%= link_to "Elegir Imagen Para Titular", "#", class: "btn btn-primary btn-outline text-lighter", id: "featured_media_button" %>
                           </div>
                         </div>
                       </div>
