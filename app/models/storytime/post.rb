@@ -6,6 +6,8 @@ module Storytime
     include Storytime::PostTags
     include Storytime::PostPartialInheritance
 
+    attr_accessor :the_header_img
+
     extend FriendlyId
     friendly_id :slug_candidates, use: [:history, :scoped], scope: :site
 
