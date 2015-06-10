@@ -42,22 +42,31 @@
               </div>
 
               <div class="row">
-                <div class="col-sm-12">
+              <%= f.input :featured, as: :boolean, label: "Hacer este post un destacado en header homepage?" %>
+              </div>
+              <div class="row">
+                <div class="col-sm-12" style="margin-bottom:10px">
                   <%# byebug %>
                   <!-- @post.featured_media[:retina_dimensions][:file] -->
                   <% if @post.featured_media %>
-                  <%= image_tag "#{@post.featured_media.file.header_img.url}", style: "max-width:19%" %>
-                  <%= image_tag "#{@post.featured_media.file.header_img_east.url}", style: "max-width:19%" %>
-                  <%= image_tag "#{@post.featured_media.file.header_img_west.url}", style: "max-width:19%" %>
-                  <%= image_tag "#{@post.featured_media.file.header_img_south_east.url}", style: "max-width:19%" %>
-                  <%= image_tag "#{@post.featured_media.file.header_img_south_west.url}", style: "max-width:19%" %>
-                  <% @headers = [:default, :derecha, :izquierda] %>
+                  <div class="header_img_show" style="float:left; font-weight:bold; width:33.3%;"><%= image_tag "#{@post.featured_media.file.header_img.url}", style: "max-width:97%;" %><br>
+                   Default</div>
+                  <div class="header_img_show" style="float:left; font-weight:bold; width:33.3%;"><%= image_tag "#{@post.featured_media.file.header_img_west.url}", style: "max-width:97%;" %><br>
+                   Izquierda</div>
+                  <div class="header_img_show" style="float:left; font-weight:bold; width:33.3%;"><%= image_tag "#{@post.featured_media.file.header_img_east.url}", style: "max-width:97%;" %><br>
+                   Derecha</div>
+                  <%#= image_tag "#{@post.featured_media.file.header_img_south_east.url}", style: "max-width:19%" %>
+                  <%#= image_tag "#{@post.featured_media.file.header_img_south_west.url}", style: "max-width:19%" %>
+                </div>
+              </div>
+
+              <div class="row">
+              <div class="col-sm-12">
+                                  <% @headers = [:default, :izquierda, :derecha] %>
                   <%= f.input :type_of_header, collection: @headers, prompt: "Elige header" %>
                   <%#= f.input :the_header_img, collection: @headers, prompt: "Elige header" %>
                   <% end %>
-
-
-                </div>
+              </div>
               </div>
 
               <div class="row">
@@ -67,9 +76,6 @@
                 <div class="col-sm-6">
                   <%= f.input :published_at, as: :date_time_picker, label: "Publish Date/Time", input_html: { style: "display: inline;" } %>
                 </div>
-              </div>
-              <div class="row">
-              <%= f.input :featured, as: :boolean, label: "Hacer este post un destacado en header homepage?" %>
               </div>
       
               <hr>

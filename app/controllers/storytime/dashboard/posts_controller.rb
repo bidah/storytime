@@ -96,7 +96,7 @@ module Storytime
           @post.autosave.destroy unless @post.autosave.nil?
 
           send_subscriber_notifications if @post.published? && post_params[:notifications_enabled] == "1"
-          byebug
+          #byebug
           redirect_to [:edit, :dashboard, @post], notice: I18n.t('flash.posts.update.success')
         else
           load_media
