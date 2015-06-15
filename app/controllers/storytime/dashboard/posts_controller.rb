@@ -91,7 +91,6 @@ module Storytime
 
         # @post.featured_media.file.header_img.url = @header
 
-
         if @post.update_attributes(post_params)
           @post.autosave.destroy unless @post.autosave.nil?
 
@@ -150,7 +149,7 @@ module Storytime
       def post_params
         post = @post || current_post_type.new(user: current_user)
         permitted_attrs = policy(post).permitted_attributes
-        permitted_attrs = permitted_attrs.append(storytime_post_param_additions).append(:type_of_header) if respond_to?(:storytime_post_param_additions)
+        permitted_attrs = permitted_attrs.append(storytime_post_param_additions) if respond_to?(:storytime_post_param_additions)
         params.require(current_post_type.type_name.tableize.singularize.to_sym).permit(*permitted_attrs)
       end
 
