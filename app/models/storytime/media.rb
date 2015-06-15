@@ -6,5 +6,6 @@ module Storytime
     belongs_to :site
 
     mount_uploader :file, MediaUploader
+    attr_accessor :retina_dimensions
   end
 end
