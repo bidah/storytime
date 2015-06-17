@@ -42,6 +42,7 @@ Gem::Specification.new do |s|
   s.add_dependency "fitvidsjs_rails"
   s.add_dependency "retina_rails", "~> 2.0.0"
   s.add_dependency "responsive-nav-rails"
+  s.add_dependecy "instagram"
   
   s.add_development_dependency "pg"
   s.add_development_dependency "rspec-rails"
