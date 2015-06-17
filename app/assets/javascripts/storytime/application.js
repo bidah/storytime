@@ -33,6 +33,7 @@
 //= require chosen.jquery
 //= require medium-editor.min
 //= require fitvids.js
+//= require jquery.instagram
 //= require_tree .
 
 window.Storytime || (window.Storytime = {})
