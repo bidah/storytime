@@ -43,6 +43,7 @@ Gem::Specification.new do |s|
   s.add_dependency "retina_rails", "~> 2.0.0"
   s.add_dependency "responsive-nav-rails"
   s.add_dependency "instagram"
+  s.add_dependency "autoprefixer-rails"
   
   s.add_development_dependency "pg"
   s.add_development_dependency "rspec-rails"
