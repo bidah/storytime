@@ -12,6 +12,7 @@ Storytime::Engine.routes.draw do
   end
 
   namespace :dashboard, :path => Storytime.dashboard_namespace_path do
+    get "/index", to: "pages#index"
     get "/", to: "pages#index"
     resources :sites, only: [:new, :edit, :update, :create, :destroy]
 
