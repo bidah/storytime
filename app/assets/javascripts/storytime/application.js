@@ -49,6 +49,8 @@ $(function() {
   });
 })
 
+$('.moving-banner').insertAfter('.list_item:nth-child(3)');
+
 });
 
 
