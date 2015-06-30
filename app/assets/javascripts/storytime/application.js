@@ -42,6 +42,9 @@ window.Storytime.Dashboard = {}
 document.addEventListener("DOMContentLoaded", function(event) { 
   $("#responsive-videos").fitVids();
 
+  	$('ul.dropdown-menu.dropdown-menu-right li:last-child').remove();
+
+
 $(function() {
   $('.menu_burger').click(function() {
   $('.menu').slideToggle();
@@ -52,6 +55,7 @@ $(function() {
 $('.moving-banner').insertAfter('.list_item:nth-child(3)');
 
 });
+
 
 
 

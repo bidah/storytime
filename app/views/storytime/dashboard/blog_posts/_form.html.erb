@@ -30,6 +30,10 @@
                 <%= render("storytime/dashboard/posts/#{@post.type_name}_fields", f: f)  %>
               <% end %>
               
+              <div class="row">
+              <%= f.input :article, as: :boolean, label: "Este post es un Articulo" %>
+              </div>
+
               <div class="post_field post_excerpt character-limit">
                 <small>
                   <div class="pull-right character-limit-display" data-limit="<%= Storytime.post_excerpt_character_limit %>"></div>
@@ -39,7 +43,11 @@
 
               <div class="post_field post_tags">
                 <%= f.association :tags, input_html: { name: "#{@post.class.name.split('::').last.tableize.singularize}[tag_list][]", class: 'chosen-select tags-input', multiple: true } %>
+                <div class="alert alert-warning" role="alert">
+                  <p> Solo se puede agregar un tag por post. <span class="label label-info">surf</span>, <span class="label label-info">skate</span> o <span class="label label-info">snowboard</span> Hay que respetar que sea en minusculas. Cuando se empieza a escribir el tag va a aparecer un 'auto complete' y antes de cerrar el tag se puede poner 'enter' para agregarlo.</p>
+                </div>
               </div>
+
 
               <div class="row">
               <%= f.input :featured, as: :boolean, label: "Hacer este post un destacado en header homepage?" %>

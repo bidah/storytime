@@ -4,6 +4,7 @@ module Storytime
     include Storytime::PostExcerpt
     include Storytime::PostFeaturedImages
     belongs_to :blog, class_name: "Storytime::Blog"
+    validates :video_embed, presence: true
 
     paginates_per 9
 
