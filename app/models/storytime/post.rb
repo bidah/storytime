@@ -22,8 +22,8 @@ module Storytime
     validates :title, length: { in: 1..Storytime.post_title_character_limit }
     validates :user, presence: true
     validates :type, inclusion: { in: Storytime.post_types }
-    #validates :video_embed, format: {with: /<iframe[^>]+>.*?<\/iframe>/,  message: "El post tiene que tener un embed del 'iframe' "}
-    #validates :video_embed, absence: true
+    # validates :video_embed, format: {with: /<iframe[^>]+>.*?<\/iframe>/,  message: "El post tiene que tener un embed del 'iframe' "}
+    #validates :video_embed, presence: true
 
 
     before_save :sanitize_content

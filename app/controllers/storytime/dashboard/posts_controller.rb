@@ -39,7 +39,7 @@ module Storytime
         @post.draft_user_id = current_user.id
         authorize @post
 
-        if @post.save
+        if @post.save!(:validate => false)
           @post.create_autosave(post_params.slice(:draft_content)) if params[:preview] == "true"
 
           send_subscriber_notifications if @post.published? && post_params[:notifications_enabled] == "1"
