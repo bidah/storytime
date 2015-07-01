@@ -52,7 +52,7 @@ $(function() {
   });
 })
 
-$('.moving-banner').insertAfter('.list_item:nth-child(3)');
+$('.moving-banner').insertAfter('.list_item:nth-child(6)');
 
 });
 

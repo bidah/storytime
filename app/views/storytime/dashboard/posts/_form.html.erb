@@ -150,7 +150,6 @@
               <span class="help-block"><%= @post.errors[:title][0] %></span>
             </span>
           <% end %>
-
           <!-- Do not add any extra whitespace inside this div. It gets copied into the post content. -->
           <div class="medium-editor" data-input="#<%= @post.class.name.split('::').last.tableize.singularize %>_draft_content" id="medium-editor-post" contenteditable='true' style="outline: none; margin-top: 30px;"><%= raw @post.draft_content %></div>
 

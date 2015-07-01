@@ -26,9 +26,9 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-8 col-md-offset-2">
-              <% if lookup_context.template_exists?("storytime/dashboard/posts/_#{@post.type_name}_fields") %>
+<!--               <% if lookup_context.template_exists?("storytime/dashboard/posts/_#{@post.type_name}_fields") %>
                 <%= render("storytime/dashboard/posts/#{@post.type_name}_fields", f: f)  %>
-              <% end %>
+              <% end %> -->
               
               <div class="row">
               <%= f.input :article, as: :boolean, label: "Este post es un Articulo" %>
@@ -44,7 +44,7 @@
               <div class="post_field post_tags">
                 <%= f.association :tags, input_html: { name: "#{@post.class.name.split('::').last.tableize.singularize}[tag_list][]", class: 'chosen-select tags-input', multiple: true } %>
                 <div class="alert alert-warning" role="alert">
-                  <p> Solo se puede agregar un tag por post. <span class="label label-info">surf</span>, <span class="label label-info">skate</span> o <span class="label label-info">snowboard</span> Hay que respetar que sea en minusculas. Cuando se empieza a escribir el tag va a aparecer un 'auto complete' y antes de cerrar el tag se puede poner 'enter' para agregarlo.</p>
+                  <p> Solo se puede agregar un tag por post. <span class="label label-info">surf</span>, <span class="label label-info">skate</span> o <span class="label label-info">snow</span> Hay que respetar que sea en minusculas. Cuando se empieza a escribir el tag va a aparecer un 'auto complete' y antes de cerrar el tag se puede poner 'enter' para agregarlo.</p>
                 </div>
               </div>
 
@@ -151,7 +151,10 @@
           <%= autosave_info @post if @post.persisted? %>
 
           <%= f.error_notification if false %>
-          
+
+              <% if lookup_context.template_exists?("storytime/dashboard/posts/_#{@post.type_name}_fields") %>
+                <%= render("storytime/dashboard/posts/#{@post.type_name}_fields", f: f)  %>
+              <% end %>
           <div class="character-limit">
             <span id="title_character_limit" class="text-muted character-limit-display" data-limit="<%= Storytime.post_title_character_limit %>"></span>
             <h2 contenteditable="true" id="post-title-input" style="outline: none; margin-top: 0;" class="contenteditable character-limit-contenteditable" data-input="#<%= @post.class.name.split('::').last.tableize.singularize %>_title" placeholder="Title" autofocus="autofocus"><%= @post.title %></h2>
