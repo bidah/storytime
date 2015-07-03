@@ -35,14 +35,14 @@
             <% end %>
           </li>
         <% end %>
-<!--         <% if Pundit.policy(current_user, Storytime::Subscription).manage? %>
+         <% if Pundit.policy(current_user, Storytime::Subscription).manage? %>
           <li>
-            <%= link_to [storytime, :dashboard, Storytime::Subscription], class: "storytime-modal-trigger", remote: true, id: "subscriptions-link" do %>
+            <%= link_to [storytime, :dashboard, Storytime::Subscription], class: "storytime-modal-trigger", style="display:none" remote: true, id: "subscriptions-link" do %>
               <i class="icon-st-icons-subscribe"></i>
               <span style="margin-left: 10px; margin-right: 6px;">Subsciptions</span>
             <% end %>
           </li>
-        <% end %> -->
+        <% end %>
         <li class="divider"></li>
         <li>
           <%= link_to Storytime.logout_path, method: Storytime.logout_method do %>
