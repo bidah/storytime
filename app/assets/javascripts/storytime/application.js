@@ -53,6 +53,10 @@ $(function() {
   });
 })
 
+// solution for hover on mobile
+$('body').bind('touchstart', function() {});
+//
+
 $('.moving-banner').insertAfter('.list_item:nth-child(6)');
 
 });
