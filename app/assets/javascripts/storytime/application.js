@@ -41,16 +41,18 @@ window.Storytime.Dashboard = {}
 
 document.addEventListener("DOMContentLoaded", function(event) { 
 
-  $("#responsive-videos").fitVids();
-
-  	$('ul.dropdown-menu.dropdown-menu-right li:last-child').remove();
+  // $("#responsive-videos").fitVids();
 
 
-$(function() {
-  $('.menu_burger').click(function() {
-  $('.menu').slideToggle();
-  return false;
-  });
+  $("#responsive-videos").fitVids({ customSelector: "iframe[src^='http://sharevideo.redbull.com']"});
+
+  $('ul.dropdown-menu.dropdown-menu-right li:last-child').remove();
+
+	$(function() {
+	  $('.menu_burger').click(function() {
+	  $('.menu').slideToggle();
+	  return false;
+	  });
 })
 
 // solution for hover on mobile

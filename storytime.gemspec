@@ -44,6 +44,7 @@ Gem::Specification.new do |s|
   s.add_dependency "responsive-nav-rails"
   s.add_dependency "instagram"
   s.add_dependency "autoprefixer-rails"
+  s.add_dependency "meta-tags"
   
   s.add_development_dependency "pg"
   s.add_development_dependency "rspec-rails"
