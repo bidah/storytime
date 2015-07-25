@@ -43,8 +43,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   // $("#responsive-videos").fitVids();
 
-
-  $("#responsive-videos").fitVids({ customSelector: "iframe[src^='http://sharevideo.redbull.com']"});
+  $("#responsive-videos").fitVids({ customSelector: "iframe[src^='http://sharevideo.redbull.com'], iframe[src^='http://www.thrashermagazine.com']"});
 
   $('ul.dropdown-menu.dropdown-menu-right li:last-child').remove();
 
