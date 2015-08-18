@@ -31,7 +31,13 @@
               <% end %> -->
               
               <div class="row">
-              <%= f.input :article, as: :boolean, label: "Este post es un Articulo" %>
+                <%= f.input :article, as: :boolean, label: "Este post es un Articulo" %>
+              </div>
+              <div class="row">
+                <%= f.input :guest_author, label: "Autor" %>
+              </div>
+              <div class="row">
+                <%= f.input :photos_by, label: "Fotos" %>
               </div>
 
               <div class="post_field post_excerpt character-limit">
