@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   // $("#responsive-videos").fitVids();
 
-  $("#responsive-videos").fitVids({ customSelector: "iframe[src^='http://sharevideo.redbull.com'],iframe[src^='https://sharevideo.redbull.com'], iframe[src^='http://www.thrashermagazine.com'], iframe[src^='https://embed.theguardian.com'], iframe[src^='http://embed.theguardian.com'], iframe[src^='http://theberrics.com']"});
+  $("#responsive-videos").fitVids({ customSelector: "iframe[src^='http://sharevideo.redbull.com'],iframe[src^='https://sharevideo.redbull.com'], iframe[src^='http://www.thrashermagazine.com'], iframe[src^='https://embed.theguardian.com'], iframe[src^='http://embed.theguardian.com'], iframe[src^='http://theberrics.com'], iframe[src^='https://theberrics.com'], iframe[src^='http://www.theberrics.com'], , iframe[src^='https://www.theberrics.com']"});
 
   $('ul.dropdown-menu.dropdown-menu-right li:last-child').remove();
 
