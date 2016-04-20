@@ -61,7 +61,9 @@ $("#responsive-videos").fitVids({ customSelector: "iframe[src^='http://sharevide
 $('body').bind('touchstart', function() {});
 //
 
-$('.moving-banner').insertAfter('.list_item:nth-child(6)');
+  $('.moving-banner').insertAfter('.list_item:nth-child(8)');
+  $('.banner-1').insertBefore('.list_item:nth-child(3)');
+  
 
 });
 
