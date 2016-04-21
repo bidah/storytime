@@ -61,22 +61,21 @@ $("#responsive-videos").fitVids({ customSelector: "iframe[src^='http://sharevide
 $('body').bind('touchstart', function() {});
 //
 
-var bannerTwo = $('.banner-2');
-bannerTwo.detach();
-bannerTwo.insertAfter('.list_item:nth-child(10)');
+  var bannerTwo = $('.banner-2');
+  bannerTwo.detach();
+  bannerTwo.insertAfter('.list_item:nth-child(10)');
 
-var movingBanner = $('.moving-banner');
-movingBanner.detach();
-movingBanner.insertAfter('.list_item:nth-child(8)');
+  var movingBanner = $('.moving-banner');
+  movingBanner.detach();
+  movingBanner.insertAfter('.list_item:nth-child(8)');
 
-var bannerOne = $('.banner-1');
-bannerOne.detach();
-bannerOne.insertAfter('.list_item:nth-child(2)');
+  var bannerOne = $('.banner-1');
+  bannerOne.detach();
+  bannerOne.insertAfter('.list_item:nth-child(2)');
 
 
-
-  // $('.banner-2').insertAfter('.list_item:nth-child(2)');
-  // $('.banner-1').insertBefore('.list_item:nth-child(14)');
+    // $('.banner-2').insertAfter('.list_item:nth-child(2)');
+    // $('.banner-1').insertBefore('.list_item:nth-child(14)');
   
 
 });
